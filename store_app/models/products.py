@@ -1,4 +1,5 @@
 from django.db import models
+from .statuses import Status
 
 
 class Product(models.Model):
@@ -9,14 +10,10 @@ class Product(models.Model):
     category = models.ForeignKey(
         "Category", on_delete=models.CASCADE, related_name="products"
     )
+    image = models.ImageField(upload_to="product_images/", null=True, blank=True)
+    status = models.ForeignKey(
+        Status, on_delete=models.CASCADE, related_name="products", default=1
+    )
 
     def __str__(self):
         return f"Продукт {self.name} из категории {self.category}, цена {self.price} "
-
-
-class Category(models.Model):
-    name = models.CharField(max_length=50)
-    description = models.TextField()
-
-    def __str__(self):
-        return self.name

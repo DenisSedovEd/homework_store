@@ -1,0 +1,324 @@
+[
+  {
+    "model": "store_app.status",
+    "pk": 1,
+    "fields": {
+      "name": "Редактирование"
+    }
+  },
+  {
+    "model": "store_app.status",
+    "pk": 2,
+    "fields": {
+      "name": "Публикация"
+    }
+  },
+  {
+    "model": "store_app.category",
+    "pk": 1,
+    "fields": {
+      "name": "Электроника",
+      "description": "Электронные устройства и гаджеты"
+    }
+  },
+  {
+    "model": "store_app.category",
+    "pk": 2,
+    "fields": {
+      "name": "Одежда",
+      "description": "Мужская, женская и детская одежда"
+    }
+  },
+  {
+    "model": "store_app.category",
+    "pk": 3,
+    "fields": {
+      "name": "Обувь",
+      "description": "Мужская, женская и детская обувь"
+    }
+  },
+  {
+    "model": "store_app.category",
+    "pk": 4,
+    "fields": {
+      "name": "Спорттовары",
+      "description": "Инвентарь и экипировка для спорта"
+    }
+  },
+  {
+    "model": "store_app.category",
+    "pk": 5,
+    "fields": {
+      "name": "Косметика",
+      "description": "Декоративная и уходовая косметика"
+    }
+  },
+  {
+    "model": "store_app.category",
+    "pk": 6,
+    "fields": {
+      "name": "Продукты",
+      "description": "Свежие продукты питания"
+    }
+  },
+  {
+    "model": "store_app.category",
+    "pk": 7,
+    "fields": {
+      "name": "Товары для дома",
+      "description": "Хозяйственные товары и декор"
+    }
+  },
+  {
+    "model": "store_app.category",
+    "pk": 8,
+    "fields": {
+      "name": "Детские товары",
+      "description": "Игрушки и товары для детей"
+    }
+  },
+  {
+    "model": "store_app.category",
+    "pk": 9,
+    "fields": {
+      "name": "Книги",
+      "description": "Художественная и учебная литература"
+    }
+  },
+  {
+    "model": "store_app.category",
+    "pk": 10,
+    "fields": {
+      "name": "Аксессуары",
+      "description": "Сумки, ремни, украшения"
+    }
+  },
+  {
+    "model": "store_app.product",
+    "pk": 1,
+    "fields": {
+      "name": "Смартфон iPhone 15",
+      "description": "Новый флагман Apple с улучшенным процессором",
+      "price": 99999.99,
+      "created_at": "2025-07-06T20:29:42",
+      "category": 1,
+      "image": "product_images/iphone15.jpg"
+    }
+  },
+  {
+    "model": "store_app.product",
+    "pk": 2,
+    "fields": {
+      "name": "Куртка зимняя",
+      "description": "Теплая зимняя куртка из водоотталкивающей ткани",
+      "price": 12999.99,
+      "created_at": "2025-07-06T20:29:42",
+      "category": 2,
+      "image": "product_images/winter_jacket.jpg"
+    }
+  },
+  {
+    "model": "store_app.product",
+    "pk": 3,
+    "fields": {
+      "name": "Кроссовки Nike Air Max",
+      "description": "Комфортные кроссовки для повседневной носки",
+      "price": 8999.99,
+      "created_at": "2025-07-06T20:29:42",
+      "category": 3,
+      "image": "product_images/nike_airmax.jpg"
+    }
+  },
+  {
+    "model": "store_app.product",
+    "pk": 5,
+    "fields": {
+      "name": "Ноутбук MacBook Pro",
+      "description": "Мощный ноутбук для работы и развлечений",
+      "price": 149999.99,
+      "created_at": "2025-07-06T20:29:42",
+      "category": 1,
+      "image": "product_images/macbook_pro.jpg"
+    }
+  },
+  {
+    "model": "store_app.product",
+    "pk": 6,
+    "fields": {
+      "name": "Платье вечернее",
+      "description": "Элегантное вечернее платье из шелка",
+      "price": 9999.99,
+      "created_at": "2025-07-06T20:29:42",
+      "category": 2,
+      "image": "product_images/evening_dress.jpg"
+    }
+  },
+  {
+    "model": "store_app.product",
+    "pk": 7,
+    "fields": {
+      "name": "Кроссовки Adidas",
+      "description": "Спортивные кроссовки для бега",
+      "price": 7999.99,
+      "created_at": "2025-07-06T20:29:42",
+      "category": 3,
+      "image": "product_images/adidas_shoes.jpg"
+    }
+  },
+  {
+    "model": "store_app.product",
+    "pk": 8,
+    "fields": {
+      "name": "Тренажер эллиптический",
+      "description": "Домашний кардио тренажер",
+      "price": 49999.99,
+      "created_at": "2025-07-06T20:29:42",
+      "category": 4,
+      "image": "product_images/elliptical.jpg"
+    }
+  },
+  {
+    "model": "store_app.product",
+    "pk": 9,
+    "fields": {
+      "name": "Крем для лица",
+      "description": "Увлажняющий крем для ежедневного использования",
+      "price": 2999.99,
+      "created_at": "2025-07-06T20:29:42",
+      "category": 5,
+      "image": "product_images/face_cream.jpg"
+    }
+  },
+  {
+    "model": "store_app.product",
+    "pk": 10,
+    "fields": {
+      "name": "Говядина мраморная",
+      "description": "Свежее мясо высшего сорта",
+      "price": 1999.99,
+      "created_at": "2025-07-06T20:29:42",
+      "category": 6,
+      "image": "product_images/beef.jpg"
+    }
+  },
+  {
+    "model": "store_app.product",
+    "pk": 11,
+    "fields": {
+      "name": "Пылесос робот",
+      "description": "Умный робот-пылесос с автоматическим управлением",
+      "price": 29999.99,
+      "created_at": "2025-07-06T20:29:42",
+      "category": 7,
+      "image": "product_images/robot_vacuum.jpg"
+    }
+  },
+  {
+    "model": "store_app.product",
+    "pk": 12,
+    "fields": {
+      "name": "Конструктор LEGO",
+      "description": "Развивающий конструктор для детей",
+      "price": 3999.99,
+      "created_at": "2025-07-06T20:29:42",
+      "category": 8,
+      "image": "product_images/lego.jpg"
+    }
+  },
+  {
+    "model": "store_app.product",
+    "pk": 13,
+    "fields": {
+      "name": "Телевизор LED 55\"",
+      "description": "Умный телевизор с поддержкой 4K и Smart TV",
+      "price": 59999.99,
+      "created_at": "2025-07-06T20:29:42",
+      "category": 1,
+      "image": "product_images/tv_55.jpg"
+    }
+  },
+  {
+    "model": "store_app.product",
+    "pk": 14,
+    "fields": {
+      "name": "Джинсы мужские",
+      "description": "Классические синие джинсы из плотного денима",
+      "price": 4999.99,
+      "created_at": "2025-07-06T20:29:42",
+      "category": 2,
+      "image": "product_images/jeans.jpg"
+    }
+  },
+  {
+    "model": "store_app.product",
+    "pk": 15,
+    "fields": {
+      "name": "Кроссовки Puma",
+      "description": "Стильные кроссовки для повседневной носки",
+      "price": 7499.99,
+      "created_at": "2025-07-06T20:29:42",
+      "category": 3,
+      "image": "product_images/puma_shoes.jpg"
+    }
+  },
+  {
+    "model": "store_app.product",
+    "pk": 16,
+    "fields": {
+      "name": "Гантели регулируемые",
+      "description": "Набор гантелей с регулировкой веса",
+      "price": 9999.99,
+      "created_at": "2025-07-06T20:29:42",
+      "category": 4,
+      "image": "product_images/dumbbells.jpg"
+    }
+  },
+  {
+    "model": "store_app.product",
+    "pk": 17,
+    "fields": {
+      "name": "Тушь для ресниц",
+      "description": "Водостойкая тушь с эффектом объема",
+      "price": 1499.99,
+      "created_at": "2025-07-06T20:29:42",
+      "category": 5,
+      "image": "product_images/mascara.jpg"
+    }
+  },
+  {
+    "model": "store_app.product",
+    "pk": 18,
+    "fields": {
+      "name": "Молоко пастеризованное",
+      "description": "Натуральное молоко 3.2%",
+      "price": 89.99,
+      "created_at": "2025-07-06T20:29:42",
+      "category": 6,
+      "image": "product_images/milk.jpg"
+    }
+  },
+  {
+    "model": "store_app.product",
+    "pk": 19,
+    "fields": {
+      "name": "Пылесос ручной",
+      "description": "Компактный пылесос для быстрой уборки",
+      "price": 4999.99,
+      "created_at": "2025-07-06T20:29:42",
+      "category": 7,
+      "image": "product_images/hand_vacuum.jpg"
+    }
+  },
+  {
+    "model": "store_app.product",
+    "pk": 20,
+    "fields": {
+      "name": "Конструктор Meccano",
+      "description": "Металлический конструктор для сборки механизмов",
+      "price": 5999.99,
+      "created_at": "2025-07-06T20:29:42",
+      "category": 8,
+      "image": "product_images/meccano.jpg"
+    }
+  }
+]

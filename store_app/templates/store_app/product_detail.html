@@ -1,0 +1,14 @@
+{% extends "store_app/base.html" %}
+
+{% block content %}
+<h2>{{ product.name }}</h2>
+<p>{{ product.description }}</p>
+
+<ul class="list-group">
+    <li class="list-group-item">Категория: {{ product.category }}</li>
+    <li class="list-group-item">Цена: {{ product.price }}</li>
+    <li><a href="{% url 'product_edit'  product.id %}" class="btn btm-sm btn-warning">Редактировать товар</a></li>
+    <li><a href="{% url 'product_list' %}" class="btn btm-sm btn-secondary">К списку товаров</a></li>
+
+</ul>
+{% endblock %}

@@ -27,6 +27,8 @@ DEBUG = True
 
 ALLOWED_HOSTS = []
 
+MEDIA_ROOT = BASE_DIR / "media"
+MEDIA_URL = "/media/"
 
 # Application definition
 
@@ -37,7 +39,7 @@ INSTALLED_APPS = [
     "django.contrib.sessions",
     "django.contrib.messages",
     "django.contrib.staticfiles",
-    "store_app.apps.StoreAppConfig"
+    "store_app.apps.StoreAppConfig",
 ]
 
 MIDDLEWARE = [
@@ -74,16 +76,15 @@ WSGI_APPLICATION = "config.wsgi.application"
 # https://docs.djangoproject.com/en/5.2/ref/settings/#databases
 
 DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'store_pg',
-        'USER': 'app',
-        'PASSWORD': 'password',
-        'HOST': 'localhost',
-        'PORT': '5434',
+    "default": {
+        "ENGINE": "django.db.backends.postgresql",
+        "NAME": "store_pg",
+        "USER": "app",
+        "PASSWORD": "password",
+        "HOST": "localhost",
+        "PORT": "5434",
     }
 }
-
 
 
 # Password validation
