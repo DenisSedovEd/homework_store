@@ -23,6 +23,7 @@ def add_product(request):
         form = ProductModelForm(request.POST)
         if form.is_valid():
             form.save()
+            return redirect("product_list")
     else:
         form = ProductModelForm()
 

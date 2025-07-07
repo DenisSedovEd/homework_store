@@ -12,4 +12,10 @@ docker compose up -d db-store
 python manage.py migrate
 ```
 
-После успешно примененных миграций можно выполнить файл add_objects.py для добавления нескольких записей в БД.
+В проекте присутствует .json файл с моковыми данными:
+
+```shell
+python manage.py loaddata ./store_app/fixtures/load_moc_data.json
+```
+
+

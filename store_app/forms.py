@@ -38,6 +38,7 @@ class ProductModelForm(forms.ModelForm):
         name = self.cleaned_data["name"]
         if len(name) < 5:
             raise ValidationError("Название товара должно быть не короче 5 символов")
+        return name
 
     def clean_price(self):
         price = self.cleaned_data["price"]
@@ -45,8 +46,10 @@ class ProductModelForm(forms.ModelForm):
             raise ValidationError("Стоимость не может содержать нечисловые значения.")
         elif price <= 0:
             raise ValidationError("Стоимость не может быть отрицательным значением.")
+        return price
 
     def clean_description(self):
         description = self.cleaned_data["description"]
         if "плохое слово" in description:
             raise ValidationError("Описание содержит плохое слово!!!")
+        return description
