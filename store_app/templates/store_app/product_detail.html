@@ -9,6 +9,7 @@
     <li class="list-group-item">Цена: {{ product.price }}</li>
     <li><a href="{% url 'product_edit'  product.id %}" class="btn btm-sm btn-warning">Редактировать товар</a></li>
     <li><a href="{% url 'product_list' %}" class="btn btm-sm btn-secondary">К списку товаров</a></li>
+    <li><a href="{% url 'product_delete' product.id %}" class="btn btm-sm btn-danger">Удалить товар</a></li>
 
 </ul>
 {% endblock %}
