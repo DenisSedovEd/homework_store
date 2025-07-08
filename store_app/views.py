@@ -1,59 +1,53 @@
-from django.shortcuts import render, get_object_or_404, redirect
+from django.contrib import messages
+from django.urls import reverse_lazy
+from django.views.generic import (
+    ListView,
+    DeleteView,
+    CreateView,
+    UpdateView,
+    DetailView,
+)
+from django.views.generic.base import TemplateView
 
 from .forms import ProductModelForm
 from .models import Product
 
 
-def index(request):
-    return render(request, "store_app/index.html")
+class IndexTemplateView(TemplateView):
+    template_name = "store_app/index.html"
 
 
-def product_list(request):
-    products = Product.objects.all()
-    context = {
-        "title": "Product List",
-        "products": products,
-    }
-    return render(request, "store_app/product_list.html", context=context)
+class ProductListView(ListView):
+    model = Product
+    template_name = "store_app/product_list.html"
+    context_object_name = "products"
 
 
-def add_product(request):
-    if request.method == "POST":
-        form = ProductModelForm(request.POST)
-        if form.is_valid():
-            form.save()
-            return redirect("product_list")
-    else:
-        form = ProductModelForm()
+class ProductCreateView(CreateView):
+    model = Product
+    template_name = "store_app/add_product.html"
+    form_class = ProductModelForm
+    success_url = reverse_lazy("product_list")
 
-    context = {
-        "title": "Add Product",
-        "form": form,
-    }
-
-    return render(request, "store_app/add_product.html", context=context)
+    def form_valid(self, form):
+        messages.success(self.request, "Product created successfully")
+        return super().form_valid(form)
 
 
-def product_detail(request, product_id):
-    product = Product.objects.get(id=product_id)
-    context = {
-        "title": "Product Detail",
-        "product": product,
-    }
-    return render(request, "store_app/product_detail.html", context=context)
+class ProductDetailView(DetailView):
+    model = Product
+    template_name = "store_app/product_detail.html"
+    context_object_name = "product"
 
 
-def product_edit(request, product_id):
-    product = get_object_or_404(Product, pk=product_id)
-    if request.method == "POST":
-        form = ProductModelForm(request.POST, instance=product)
-        if form.is_valid():
-            form.save()
-            return redirect("product_detail", product_id=product_id)
-    else:
-        form = ProductModelForm(instance=product)
-    context = {
-        "title": "Edit Product",
-        "form": form,
-    }
-    return render(request, "store_app/product_edit.html", context=context)
+class ProductUpdateView(UpdateView):
+    model = Product
+    template_name = "store_app/product_edit.html"
+    form_class = ProductModelForm
+    success_url = reverse_lazy("product_list")
+
+
+class ProductDeleteView(DeleteView):
+    model = Product
+    template_name = "store_app/deleted_product.html"
+    success_url = reverse_lazy("product_list")
