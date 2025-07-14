@@ -18,4 +18,19 @@ python manage.py migrate
 python manage.py loaddata ./store_app/fixtures/load_moc_data.json
 ```
 
+# UDP Django и отложенные задачи с Celery и Redis//ДЗ
+
+## Обновлен файл docker-compose.yaml: добавлены секции redis, celery.
+
+### Запуск контейнера:
+
+```shell
+docker compose up --build db-store
+```
+
+после запуска контейнера ресурс доступен по ссылке: http://localhost:8000/
+
+При запуске не в detached режиме и добавлении нового товара можно увидеть результат выполнения задачи.
+
+![img.png](img.png)
 

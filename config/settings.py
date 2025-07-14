@@ -26,7 +26,7 @@ SECRET_KEY = "django-insecure-jtla3jc6ka7o2*j!7sq#$*osle-h+#(j_$m41p4@j9urtz#kq=
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ["*"]
 
 MEDIA_ROOT = BASE_DIR / "media"
 MEDIA_URL = "/media/"
@@ -41,6 +41,7 @@ INSTALLED_APPS = [
     "django.contrib.messages",
     "django.contrib.staticfiles",
     "store_app.apps.StoreAppConfig",
+    "django_celery_results",
 ]
 
 MIDDLEWARE = [
@@ -82,8 +83,8 @@ DATABASES = {
         "NAME": "store_pg",
         "USER": "app",
         "PASSWORD": "password",
-        "HOST": "localhost",
-        "PORT": "5434",
+        "HOST": "db-store",
+        "PORT": "5432",
     }
 }
 
@@ -129,3 +130,14 @@ STATIC_ROOT = BASE_DIR / "staticfiles"
 # https://docs.djangoproject.com/en/5.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
+
+CELERY_BROKER_URL = "redis://redis:6379/0"
+CELERY_RESULT_BACKEND = "django-db"
+CELERY_TASK_IGNORE_RESULT = False
+
+EMAIL_BACKEND = "django.core.mail.backends.console.EmailBackend"
+EMAIL_HOST = "smtp.gmail.com"
+EMAIL_PORT = 587
+EMAIL_USE_TLS = True
+EMAIL_HOST_USER = "<EMAIL>"
+EMAIL_HOST_PASSWORD = "<PASSWORD>"

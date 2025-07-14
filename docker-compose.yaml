@@ -2,16 +2,51 @@ services:
   db-store:
     image: postgres:17.5
 
-    restart: always
+    #    restart: always
 
     env_file:
       - .env
 
     ports:
       - '5434:5432'
-      -
+
     volumes:
       - store_db:/var/lib/postgresql/data
+
+    healthcheck:
+      test: [ "CMD-SHELL", "pg_isready" ]
+      interval: 5s
+      timeout: 2s
+      retries: 3
+
+  app:
+    build:
+      context: .
+
+    command: python manage.py runserver 0.0.0.0:8000
+
+    ports:
+      - "8000:8000"
+
+    depends_on:
+      db-store:
+        condition: service_healthy
+      redis:
+        condition: service_started
+      celery:
+        condition: service_started
+
+  redis:
+    image: redis
+    ports:
+      - "6379:6379"
+
+  celery:
+    build: .
+    command: celery -A config worker --loglevel=info
+
+
+
 
 volumes:
   store_db:

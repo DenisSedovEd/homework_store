@@ -11,6 +11,7 @@ from django.views.generic.base import TemplateView
 
 from .forms import ProductModelForm
 from .models import Product
+from .tasks import send_mail_message
 
 
 class IndexTemplateView(TemplateView):
@@ -31,6 +32,11 @@ class ProductCreateView(CreateView):
 
     def form_valid(self, form):
         messages.success(self.request, "Product created successfully")
+        send_mail_message(
+            recipient_list=["user@mail.com"],
+            subject="Создана карточка товара",
+            message=f'Товар: {form.cleaned_data["name"]} был добавлен в каталог.',
+        )
         return super().form_valid(form)
 
 
